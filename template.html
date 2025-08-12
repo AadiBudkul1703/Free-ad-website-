@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="/favicon.png" type="image/png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Business Ads</title>
+  <link href="https://fonts.googleapis.com/css2?family=Algerian&display=swap" rel="stylesheet">
+  <style>
+   html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom, #f3f30d);
+  color: #222;
+  text-align: center;
+}
+
+header {
+  background: linear-gradient(to bottom, #000000, #1a1a1a, #f3f30d);
+  text-align: center;
+  padding: 60px 20px 40px;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+header h1 {
+  font-family: 'Algerian', serif;
+  font-size: 3.5em;
+  margin-bottom: 20px;
+  animation: fadeSlideIn 2s ease-out forwards;
+}
+
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.button:hover {
+  background-color: #ffffff;
+  color: #000;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.7);
+}
+
+#aim-box {
+  display: none;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  max-height: 70vh;
+  overflow-y: auto;
+  background: white;
+  color: #000;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  z-index: 1001;
+}
+
+#aim-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+
+#tagboard-section {
+  background-color: transparent;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#tagboard-image {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+h2 {
+  font-family: 'Algerian', serif;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.category-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.category-buttons button {
+  background: #6c757d;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.category-buttons button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.7);
+}
+
+.category-section {
+  display: none;
+  padding: 20px;
+} 
+
+.ad {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.ad img {
+  width: 75vw;
+  max-width: 1000px; 
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.25);
+}
+
+#signin-modal,
+#overlay {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+}
+
+#overlay {
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+#signin-modal {
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  padding: 20px;
+  width: 300px;
+  max-height: 70vh;
+  overflow-y: auto;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+  
+
+  </style>
+</head>
+<body>
+  <header><div class="hero-section"><br><br>
+    <h1><b>Welcome to Free Advertising</b></h1><br>
+    <button class="button" onclick="showAimBox()"><b>Our aim</b></button>
+
+<div id="aim-overlay"></div>
+<div id="aim-box">
+  <h3>Our Aim</h3>
+  <p style="text-align: left;">We aim to provide
+    <ul style="text-align: left;">
+      <li>A FREE PLATFORM to advertise your Business, Startup or Ideas</li>
+      <li>A very simple and effective way to advertise your ideas</li>
+      <li>A space where everyone can see your ideas without loging in</li>
+    </ul>
+  </p>
+  <br><br>
+  <h3>What we seek</h3>
+  <p style="text-align: left;">We know that our site has still not reached its full potential but we assure
+    you that <b>we will continue to grow</b> as we gain support from you people. So <b>please share</b> this site as it 
+    wil help you too because more people will know your idea.<br>
+    Please whatsapp at this number if you have any query or suggestion regarding the site <b>9479427117</b>
+  </p>
+  <br><br>
+  <h3>Why we require</h3>(both your phone number and city will be visible to everyone.)
+  <p style="text-align: left;">
+    <ol style="text-align: left;">
+      <li><b>Phone number</b> - So that buyers can contact you</li>
+      <li><b>City</b> - So the buyers can purchase offline</li>
+    </ol>
+  </p>
+    
+  
+  <button class="button" onclick="hideAimBox()">Close</button>
+</div>
+<br>
+    <button class="button" onclick="showSignIn()"><b>Advertise Your Own Product</b></button></div>
+  </header><br>
+  
+
+
+  <section id="tagboard-section">
+    <h2>Tagboard</h2>
+    <img src="/My ad.png" alt="Tagboard Product" id="tagboard-image">
+    <p>Contact to advertise here: <strong>9424439631</strong><br>
+    (*****with some conditions)</p>
+  </section><br><br><br><br><br><br><br><br><br><br>
+  <div style="margin: 20px;">
+  <input type="text" id="searchCity" placeholder="Enter city name" />
+  <button class="button" onclick="searchCityAds()">Search City</button>
+  </div>
+
+  <main>
+    <h2>Categories</h2>
+    <div class="category-buttons">
+      <button onclick="showCategory('sports')">Sports</button>
+      <button onclick="showCategory('clothing')">Clothing</button>
+      <button onclick="showCategory('cosmetics')">Cosmetics</button>
+      <button onclick="showCategory('jewelry')">Jewelry</button>
+      <button onclick="showCategory('food')">Food</button>
+      <button onclick="showCategory('electronics')">Electronics</button>
+      <button onclick="showCategory('medical')">Medical</button>
+      <button onclick="showCategory('automobile')">Automobile</button>
+      <button onclick="showCategory('education')">Education</button>
+    </div>
+      
+    <!--ADS_CITY_SEARCH-->
+
+
+
+    <div id="sports" class="category-section">
+
+      <h3>Sports Products</h3>
+      <div id="sports-section"><!--ADS_SPORTS-->
+</div>
+    </div>
+
+    <div id="clothing" class="category-section">
+      <h3>Clothing Products</h3>
+      <div id="cloths-section">
+        <!--ADS_CLOTHING-->
+</div>
+    </div>
+
+    <div id="cosmetics" class="category-section">
+      <h3>Cosmetics Products</h3>
+      <div id="cosmetics-section"><!--ADS_COSMETICS-->
+</div>
+    </div>
+
+    <div id="jewelry" class="category-section">
+      <h3>Jewelry Products</h3>
+      <div id="jewelry-section"><!--ADS_JEWELRY-->
+</div>
+    </div>
+
+    <div id="food" class="category-section">
+      <h3>Food Products</h3>
+      <div id="food-section"><!--ADS_FOOD-->
+
+</div>
+    </div>
+
+    <div id="electronics" class="category-section">
+
+      <h3>Electronics Products</h3>
+      <div id="electronics-section"><!--ADS_ELECTRONICS-->
+</div>
+    </div>
+
+    <div id="medical" class="category-section">
+
+      <h3>Medical Products</h3>
+      <div id="medical-section"><!--ADS_MEDICAL-->
+</div>
+    </div>
+
+    <div id="automobile" class="category-section">
+
+      <h3>Automobile Products</h3>
+      <div id="automobile-section"><!--ADS_AUTOMOBILE-->
+</div>
+    </div>
+
+    <div id="education" class="category-section">
+
+      <h3>Education Products</h3>
+      <div id="education-section"><!--ADS_EDUCATION-->
+</div>
+    </div>
+  </main>
+
+  <div id="overlay" onclick="hideSignIn()"></div>
+  <div id="signin-modal">
+    <p><strong>Do not spend anything in advertising your product now.</strong></p>
+    <form action="/submit" method="POST" enctype="multipart/form-data">
+      <label for="phone">Phone Number:</label><br>
+      <input type="text" id="phone" name="phone" required><br><br>
+
+      <label for="city">City:</label><br>
+      <input type="text" id="city" name="city" required><br><br>
+
+      <label for="address">Address (Optional):</label><br>
+      <input type="text" id="address" name="address"><br><br>
+      (These information will be visible to everyone)<br><br>
+      <label for="group">Select Group:</label><br>
+      <select id="group" name="group" required>
+        <option value="clothing">Clothing</option>
+        <option value="cosmetics">Cosmetics</option>
+        <option value="sports">Sports</option>
+        <option value="jewelry">Jewelry</option>
+        <option value="food">Food</option>
+         <option value="electronics">Electronics</option>
+          <option value="medical">Medical</option>
+          <option value="automobile">Automobile</option>
+          <option value="education">Education</option>
+
+
+          
+      </select><br><br>
+
+      <input type="file" name="image" accept="image/*" required><br>
+      <button class="button" type="submit">Submit</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Free Business Ads</p>
+  </footer>
+
+  <script>
+    function showSignIn() {
+      document.getElementById('signin-modal').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
+    }
+    function hideSignIn() {
+      document.getElementById('signin-modal').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+    }
+    function showCategory(categoryId) {
+      const categories = document.querySelectorAll('.category-section');
+      categories.forEach(cat => cat.style.display = 'none');
+      document.getElementById(categoryId).style.display = 'block';
+    }
+     function searchCityAds() {
+    const city = document.getElementById("searchCity").value.trim();
+    if (city) {
+      window.location.href = `/search?city=${encodeURIComponent(city)}`;
+    } else {
+      alert("Please enter a city name.");
+    }
+    }
+   
+    function showAimBox() {
+  document.getElementById("aim-box").style.display = "block";
+  document.getElementById("aim-overlay").style.display = "block";
+}
+function hideAimBox() {
+  document.getElementById("aim-box").style.display = "none";
+  document.getElementById("aim-overlay").style.display = "none";
+}
+
+
+  </script>
+</body>
+</html>
