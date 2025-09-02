@@ -100,7 +100,7 @@ const upload = multer({
 // ✅ Add this NEW ROUTE for /ads here:
 app.get('/ads', async (req, res) => {
   try {
-    const ads = await Ad.find().sort({ createdAt: -1 });
+    const ads = await Ad.find().sort({ createdAt: 1 });
 
     let html = fs.readFileSync(path.join(__dirname, 'template.html'), 'utf-8');
 
