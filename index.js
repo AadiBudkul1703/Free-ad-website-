@@ -214,7 +214,7 @@ Ad.countDocuments({ phone })
 app.get('/', async (req, res) => {
   try {
     const template = fs.readFileSync('template.html', 'utf8');
-    const ads = await Ad.find().sort({ createdAt: -1 });
+    const ads = await Ad.find().sort({ createdAt: 1 });
 
     const grouped = {
       clothing: [],
@@ -262,7 +262,7 @@ app.get('/search', async (req, res) => {
   const searchedCity = req.query.city.toLowerCase();
 
   try {
-    const ads = await Ad.find({ city: new RegExp(`^${searchedCity}$`, 'i') });
+    const ads = await Ad.find({ city: new RegExp(`^${searchedCity}$`, 'i') }).sort({ createdAt: 1 });
 
     let html = fs.readFileSync(path.join(__dirname, 'template.html'), 'utf-8');
 
